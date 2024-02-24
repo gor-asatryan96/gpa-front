@@ -17,10 +17,13 @@ export enum IAclPath {
 export enum IRoutePath {
   // ADD YOUR PROJECT PATHS HERE
   home = '/',
+  transactions = '/transactions',
   reports_sports = '/reports/sports',
   reports_casino = '/reports/casino',
   setting_account = '/setting/account',
   admin_for_users = '/admin/users',
+  limits_daily = '/limits/daily',
+  limits_individual = '/limits/individual',
 }
 
 export interface IMenuRoute {

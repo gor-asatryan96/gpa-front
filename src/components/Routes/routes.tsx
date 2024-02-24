@@ -1,12 +1,15 @@
 import { Navigate } from 'react-router-dom';
 import {
   AimOutlined,
+  ApartmentOutlined,
+  CalendarOutlined,
   DeploymentUnitOutlined,
   GifOutlined,
   HomeOutlined,
   QqOutlined,
   SettingOutlined,
   TeamOutlined,
+  TransactionOutlined,
   UserOutlined,
 } from '@ant-design/icons';
 
@@ -22,6 +25,9 @@ import { PasswordChangeNeedRestrict } from './routes.restricts';
 import CasinoReports from './Reports/CasinoReports/CasinoReports';
 import SportReports from './Reports/SportReports/SportReports';
 import UsersForAdmin from './AdminPanel/UsersForAdmin/UsersForAdmin';
+import Transactions from './Transactions/Transactions';
+// import Daily from './Limits/Daily/Daily';
+import Individual from './Limits/Individual/Individual';
 
 import type { RouteObject } from 'react-router-dom';
 
@@ -64,6 +70,30 @@ export const MENU_ROUTES: IMenuRoute[] = [
     icon: <HomeOutlined />,
     label: i18n.t('Home'),
     element: <Home />,
+  },
+  {
+    path: IRoutePath.transactions,
+    icon: <TransactionOutlined />,
+    label: i18n.t('Transactions'),
+    element: <Transactions />,
+  },
+  {
+    icon: <CalendarOutlined />,
+    label: i18n.t('Limits'),
+    children: [
+      // {
+      //   path: IRoutePath.limits_daily,
+      //   icon: <CalendarOutlined />,
+      //   label: i18n.t('Daily'),
+      //   element: <Daily />,
+      // },
+      {
+        path: IRoutePath.limits_individual,
+        icon: <ApartmentOutlined />,
+        label: i18n.t('Individual'),
+        element: <Individual />,
+      },
+    ],
   },
   {
     aclPath: IAclPath.reports,
